@@ -1,3 +1,8 @@
-const mutations = {};
+const Mutations = {
+    createDog(parent, args, ctx, info) {
+        //create dog
+        console.log(args);
+    },
+};
 
-module.exports = mutations;
+module.exports = Mutations;
