@@ -35,7 +35,7 @@ class CreateItem extends Component {
     };
     render() {
         return (
-            <Mutation mutation={CREATE_ITEM_MUTATION} varialbles={this.state}>
+            <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
                 {(createItem, { loading, error }) => (
                     <Form
                         onSubmit={async (e) => {
@@ -44,6 +44,10 @@ class CreateItem extends Component {
                             // call the mutation
                             const res = await createItem();
                             // change them to the single item page
+                            Router.push({
+                                pathname: '/item',
+                                query: { id: res.data.createItem.id },
+                            });
                         }}
                     >
                         <Error error={error} />
