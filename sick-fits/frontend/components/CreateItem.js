@@ -45,7 +45,6 @@ class CreateItem extends Component {
             body: data,
         });
         const file = await res.json();
-        console.log(file.secure_url, file.eager[0].secure_url);
         this.setState({
             image: file.secure_url,
             largeImage: file.eager[0].secure_url,
